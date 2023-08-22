@@ -8,7 +8,7 @@ if filename[0] == "'" and filename[-1] == "'":
 
 players = []
 
-with open(filename, 'r') as f:
+with open(filename, newline='') as f:
   c = csv.reader(f)
   for row in c:
     print(', '.join(row))
