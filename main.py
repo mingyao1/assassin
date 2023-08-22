@@ -10,10 +10,17 @@ players = []
 
 with open(filename, newline='') as f:
   c = csv.reader(f)
+  #   for row in c:
+  #   print(', '.join(row))
+  #   players.append(row)
   for row in c:
+        # Handle each row here
+    cleaned_row = [field.strip() for field in row]  # Remove leading/trailing spaces
+    
+    if not cleaned_row:
+        continue  # Skip empty lines
     print(', '.join(row))
     players.append(row)
-
 #insert remaining code here
 
 random.shuffle(players)
