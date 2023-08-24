@@ -9,11 +9,11 @@ if filename[0] == "'" and filename[-1] == "'":
 players = []
 
 with open(filename, newline='') as f:
-  c = csv.reader(f)
+  file = csv.reader(f)
   #   for row in c:
   #   print(', '.join(row))
   #   players.append(row)
-  for row in c:
+  for row in file:
         # Handle each row here
     cleaned_row = [field.strip() for field in row]  # Remove leading/trailing spaces
     
@@ -21,7 +21,6 @@ with open(filename, newline='') as f:
         continue  # Skip empty lines
     print(', '.join(row))
     players.append(row)
-#insert remaining code here
 
 random.shuffle(players)
 start = players[0]
