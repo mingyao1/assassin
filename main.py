@@ -28,5 +28,5 @@ start = players[0]
 with open("outfile.csv", 'w') as o:
   output = csv.writer(o)
   for i in range(0, len(players)-1):
-    output.writerow([players[i], players[i+1]])
-  output.writerow([players[-1], players[0]])
+    output.writerow((players[i], players[i+1]))
+  output.writerow((players[-1], players[0]))
